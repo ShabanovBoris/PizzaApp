@@ -8,5 +8,5 @@
         android:id="@+id/currentWeatherFragment"
         android:name="com.bosha.pizzaapp.ui.pizza.Fragment"
         android:label="current_weather_fragment"
-        tools:layout="@layout/current_weather_fragment" />
+        tools:layout="@layout/fragment_main" />
 </navigation>

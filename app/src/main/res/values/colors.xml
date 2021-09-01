@@ -7,4 +7,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+
+
+    <color name="main">#FD3A69</color>
+    <color name="category_button_color">#33FD3A69</color>
+    <color name="category_button_color_text">#FD3A69</color>
+    <color name="main_background">#FBFBFB</color>
+    <color name="disable_color">#C3C4C9</color>
+    <color name="description_color">#AAAAAD</color>
+    <color name="bottom_bar_color">#F0F0F0</color>
+
+
+
+
 </resources>

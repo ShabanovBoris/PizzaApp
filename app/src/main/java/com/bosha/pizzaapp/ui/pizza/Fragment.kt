@@ -13,7 +13,7 @@ import com.bosha.domain.entities.PizzaItem
 import com.bosha.domain.usecases.DeletePizzaUseCase
 import com.bosha.domain.usecases.GetPizzaListUseCase
 import com.bosha.domain.usecases.PutPizzaUseCase
-import com.bosha.pizzaapp.databinding.CurrentWeatherFragmentBinding
+import com.bosha.pizzaapp.databinding.FragmentMainBinding
 import com.bosha.pizzaapp.utils.injectDeps
 import com.bosha.pizzaapp.utils.viewModelCreator
 import kotlinx.coroutines.flow.collect
@@ -45,7 +45,7 @@ class Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return CurrentWeatherFragmentBinding.inflate(inflater, container, false).run {
+        return FragmentMainBinding.inflate(inflater, container, false).run {
 
 
             return@run root
