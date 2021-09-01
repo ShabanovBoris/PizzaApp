@@ -2,19 +2,19 @@ package com.bosha.data.dto
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 
-@Parcelize
+@kotlinx.parcelize.Parcelize
 data class PizzaApiResponse(
-	@field:SerializedName("Order_ID")
-	val orderID: Int,
-	@field:SerializedName("Crust")
-	val description: String,
-	@field:SerializedName("Size")
-	val price: String,
-	@field:SerializedName("Table_No")
-	val imageResId: Int,
-	@field:SerializedName("Flavor")
-	val title: String
+    @field:SerializedName("count")
+    val price: Int,
+    val description: String,
+    @field:SerializedName("frequency")
+    val imageResId: Int = 0,
+    val title: String,
+    val type: Int = 0,
+    val date: Long = 0,
+    val uid: String,
+    val priority: Int = 0,
 ) : Parcelable
 
+//Fields title, description, priority, type, count, frequency and date

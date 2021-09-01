@@ -8,6 +8,4 @@ interface PizzaRepository {
     fun getPizzaList(): Flow<Result<List<PizzaItem>>>
 
     suspend fun putPizza(pizzaItem: PizzaItem)
-
-    suspend fun deletePizza(pizzaItem: PizzaItem)
 }

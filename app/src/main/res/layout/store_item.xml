@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:paddingStart="@dimen/main_item_margin"
-    android:paddingTop="@dimen/big_item_margin"
+    android:paddingVertical="@dimen/small_item_margin"
     android:clipToPadding="true">
 
 
@@ -13,6 +13,7 @@
         android:id="@+id/iv_pizza_image"
         android:layout_width="135dp"
         android:layout_height="135dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/buffalo" />
@@ -21,24 +22,25 @@
         android:id="@+id/tv_pizza_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginStart="22dp"
         app:layout_constraintStart_toEndOf="@+id/iv_pizza_image"
         app:layout_constraintTop_toTopOf="@+id/iv_pizza_image"
-        tools:text="Пицца со вкусом пиццы"
-        android:textSize="16sp"
-        android:textStyle="bold"/>
+        tools:text="Пицца со вкусом пиццы" />
 
     <TextView
         android:id="@+id/tv_pizza_description"
         android:layout_width="171dp"
         android:layout_height="68dp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/tv_pizza_title"
         app:layout_constraintTop_toBottomOf="@+id/tv_pizza_title"
         android:layout_marginTop="@dimen/small_item_margin"
         android:textColor="@color/description_color"
         tools:text="Ветчина,шампиньоны, увеличинная порция моцареллы, томатный соус" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <TextView
         android:id="@+id/b_price"
         android:layout_width="87dp"
         android:layout_height="32dp"
@@ -48,5 +50,6 @@
         android:layout_marginEnd="@dimen/main_item_margin"
         tools:text="от 245 р"
         android:textColor="@color/main"
+        android:gravity="center"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

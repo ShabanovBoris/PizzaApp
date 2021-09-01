@@ -5,17 +5,13 @@ import com.bosha.data.dto.PizzaApiResponse
 import retrofit2.http.*
 
 interface PizzaApi {
-    @GET("orders")
+    @Headers("Authorization:${BuildConfig.THE_PIZZA_APIKEY}")
+    @GET("api/habit")
     suspend fun getPizzaList(): List<PizzaApiResponse>
 
-    @Headers("Authorization: Bearer ${BuildConfig.THE_PIZZA_APIKEY}")
-    @POST("orders")
+    @Headers("Authorization:${BuildConfig.THE_PIZZA_APIKEY}")
+    @PUT("api/habit")
     suspend fun putPizza(
         @Body habit: PizzaApiResponse
-    )
-
-    @DELETE("orders/{Order_ID}")
-    suspend fun deletePizza(
-       @Path("Order_ID") orderID: Int
     )
 }

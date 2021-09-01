@@ -20,7 +20,7 @@ android {
         versionName "1.0"
         // Put the apikey and base url in BuildConfig
         buildConfigField 'String', 'THE_PIZZA_APIKEY', keystoreProperties['THE_PIZZA_APIKEY']
-        buildConfigField 'String', 'BASE_URL', "\"https://order-pizza-api.herokuapp.com/api/\""
+        buildConfigField 'String', 'BASE_URL', "\"https://droid-test-server.doubletapp.ru/\""
     }
 
     buildTypes {

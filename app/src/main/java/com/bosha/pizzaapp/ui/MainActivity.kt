@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bosha.pizzaapp.R
 import com.bosha.pizzaapp.ui.di.Screen
 import com.bosha.pizzaapp.ui.di.ScreenComponent
+import com.bosha.pizzaapp.utils.ConnectivityChecker
 import com.bosha.pizzaapp.utils.createScreenComponent
 
 class MainActivity : AppCompatActivity(R.layout.activity_main), Screen {
@@ -12,5 +13,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), Screen {
         createScreenComponent()
     }
 
-
+    override fun onStart() {
+        super.onStart()
+        ConnectivityChecker.checkConnectionWithToast(this)
+    }
 }

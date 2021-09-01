@@ -33,8 +33,4 @@ class PizzaRepositoryImpl @Inject constructor(
     override suspend fun putPizza(pizzaItem: PizzaItem) {
         dataSource.putPizza(pizzaItem)
     }
-
-    override suspend fun deletePizza(pizzaItem: PizzaItem) {
-        dataSource.deletePizza(pizzaItem)
-    }
 }

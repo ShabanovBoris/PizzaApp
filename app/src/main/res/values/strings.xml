@@ -5,4 +5,7 @@
     <string name="category_combo">Комбо</string>
     <string name="category_deserts">Десерты</string>
     <string name="category_drinks">Напитки</string>
+    <string name="Menu">Меню</string>
+    <string name="profile">Профиль</string>
+    <string name="Cart">Корзина</string>
 </resources>

@@ -7,10 +7,10 @@ import javax.inject.Inject
 class PizzaApiResponseMapper @Inject constructor() {
 
     fun PizzaApiResponse.mapToPizzaItem() =
-        PizzaItem(orderID, description, price, imageResId, title)
+        PizzaItem(description, price.toString(), imageResId, title)
 
     fun PizzaItem.mapToPizzaApiResponse() =
-        PizzaApiResponse(orderID, description, price, imageResId, title)
+        PizzaApiResponse(price.toInt(), description, imageResId, title, uid = "")
 
     fun List<PizzaApiResponse>.mapToPizzaItemList(): List<PizzaItem> =
         map {
@@ -23,7 +23,7 @@ class PizzaApiResponseMapper @Inject constructor() {
         }
 
 
-    operator fun <T>invoke(scope: PizzaApiResponseMapper.() -> T): T{
+    operator fun <T> invoke(scope: PizzaApiResponseMapper.() -> T): T {
         return scope()
     }
 }

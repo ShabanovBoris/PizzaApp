@@ -28,7 +28,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:chipSpacing="@dimen/small_item_margin"
-
+                app:singleSelection="true"
+                app:checkedChip="@id/chip_first"
                 >
 
                 <com.google.android.material.chip.Chip
@@ -37,21 +38,25 @@
                     android:layout_height="wrap_content"
                     android:text="@string/category_pizza"
                     style="@style/Widget.PizzaApp.ChipStyle"
-                    android:layout_marginStart="4dp"/>
+                    android:layout_marginStart="4dp"
+                    app:checkedIconEnabled="false"
+                    />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_second"
                     android:layout_width="88dp"
                     android:layout_height="wrap_content"
                     android:text="@string/category_combo"
-                    style="@style/Widget.PizzaApp.ChipStyle"/>
+                    style="@style/Widget.PizzaApp.ChipStyle"
+                    app:checkedIconEnabled="false"/>
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_third"
                     android:layout_width="88dp"
                     android:layout_height="wrap_content"
                     android:text="@string/category_deserts"
-                    style="@style/Widget.PizzaApp.ChipStyle"/>
+                    style="@style/Widget.PizzaApp.ChipStyle"
+                    app:checkedIconEnabled="false"/>
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/fourth"
@@ -59,7 +64,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/category_drinks"
                     style="@style/Widget.PizzaApp.ChipStyle"
-                    android:layout_marginEnd="4dp"/>
+                    android:layout_marginEnd="4dp"
+                    app:checkedIconEnabled="false"/>
 
 
             </com.google.android.material.chip.ChipGroup>

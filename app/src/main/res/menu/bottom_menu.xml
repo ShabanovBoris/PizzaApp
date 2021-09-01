@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="asdasd"
-        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/Menu"
+        android:icon="@drawable/menu"
         />
     <item
-        android:title="asdasd"
-        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/profile"
+        android:icon="@drawable/profile"
         />
     <item
-        android:title="asdasd"
-        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/Cart"
+        android:icon="@drawable/cart"
         />
 </menu>

@@ -1,15 +1,13 @@
-package com.bosha.pizzaapp.ui.pizza
+package com.bosha.pizzaapp.ui.mainscreen
 
 import androidx.lifecycle.ViewModel
 import com.bosha.domain.entities.PizzaItem
-import com.bosha.domain.usecases.DeletePizzaUseCase
 import com.bosha.domain.usecases.GetPizzaListUseCase
 import com.bosha.domain.usecases.PutPizzaUseCase
 
 //54.1836563 37.6426194
 class ViewModel(
     private val getPizzaListUseCase: GetPizzaListUseCase,
-    private val deletePizzaUseCase: DeletePizzaUseCase,
     private val putPizzaUseCase: PutPizzaUseCase,
 ) : ViewModel() {
 
@@ -22,8 +20,5 @@ class ViewModel(
     fun getPizzas() = getPizzaListUseCase()
 
     suspend fun putPizza(pizzaItem: PizzaItem) = putPizzaUseCase(pizzaItem)
-
-    suspend fun deletePizza(pizzaItem: PizzaItem) = deletePizzaUseCase(pizzaItem)
-
 
 }

@@ -35,7 +35,4 @@ class PizzaDataSource @Inject constructor(
         )
     }
 
-    suspend fun deletePizza(pizzaItem: PizzaItem) = withContext(dispatcher) {
-        api.deletePizza(pizzaItem.orderID)
-    }
 }
