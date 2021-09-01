@@ -5,9 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity"
-   >
-
+    tools:context=".ui.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
@@ -17,17 +15,13 @@
         tools:listitem="@layout/store_item"
         tools:itemCount="6"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        android:paddingTop="@dimen/big_item_margin"
-/>
-
-
+        android:paddingTop="@dimen/big_item_margin" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:background="@color/white"
-        >
+        android:background="@color/white">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar_layout"
@@ -45,9 +39,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.7"
-                android:paddingHorizontal="@dimen/main_item_margin"
-                />
-
+                android:paddingHorizontal="@dimen/main_item_margin" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -58,76 +50,9 @@
 
             </androidx.appcompat.widget.Toolbar>
 
-
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-
-
-
-
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
-        app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom"
-        >
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="72dp"
-            app:cardElevation="16dp"
-            android:layout_marginBottom="24dp"
-            >
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:paddingHorizontal="@dimen/main_item_margin">
-
-                <com.google.android.material.chip.ChipGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:chipSpacing="@dimen/small_item_margin"
-
-                    >
-
-                    <com.google.android.material.chip.Chip
-                        android:layout_width="88dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/category_pizza"
-                        style="@style/Widget.PizzaApp.ChipStyle"
-                        android:layout_marginStart="4dp"/>
-
-                    <com.google.android.material.chip.Chip
-                        android:layout_width="88dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/category_combo"
-                        style="@style/Widget.PizzaApp.ChipStyle"/>
-
-                    <com.google.android.material.chip.Chip
-                        android:layout_width="88dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/category_deserts"
-                        style="@style/Widget.PizzaApp.ChipStyle"/>
-
-                    <com.google.android.material.chip.Chip
-                        android:layout_width="88dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/category_drinks"
-                        style="@style/Widget.PizzaApp.ChipStyle"
-                        android:layout_marginEnd="4dp"/>
-
-
-                </com.google.android.material.chip.ChipGroup>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-        </com.google.android.material.card.MaterialCardView>
-
-    </HorizontalScrollView>
-
+    <include layout="@layout/category_chips"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
