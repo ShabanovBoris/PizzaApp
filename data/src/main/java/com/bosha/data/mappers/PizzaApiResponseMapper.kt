@@ -22,7 +22,6 @@ class PizzaApiResponseMapper @Inject constructor() {
             it.mapToPizzaApiResponse()
         }
 
-
     operator fun <T> invoke(scope: PizzaApiResponseMapper.() -> T): T {
         return scope()
     }

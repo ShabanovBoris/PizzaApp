@@ -1,7 +1,7 @@
 plugins {
+    id 'kotlin-kapt'
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-kapt'
 }
 
 // Reading the apikey from file
@@ -68,17 +68,12 @@ dependencies {
     //room
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
-//    androidTestImplementation 'androidx.test:rules:1.4.0'
-//    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.4.0'
     kapt "androidx.room:room-compiler:$room_version"
     //network
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
-    //glide
-//    implementation 'jp.wasabeef:glide-transformations:4.3.0'
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
     //dagger
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"

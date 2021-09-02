@@ -8,7 +8,7 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-    modules = [RetrofitModule::class, Subcomponents::class, DispatcherModule::class]
+    modules = [RetrofitModule::class, Subcomponents::class, DispatcherModule::class, RoomModule::class]
 )
 interface AppComponent {
 

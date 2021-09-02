@@ -8,7 +8,9 @@ import com.bosha.domain.common.PendingResult
 import com.bosha.domain.common.Result
 import com.bosha.domain.common.SuccessResult
 import com.bosha.domain.entities.PizzaItem
+import com.bosha.domain.usecases.GetCachePizzaUseCase
 import com.bosha.domain.usecases.GetPizzaListUseCase
+import com.bosha.domain.usecases.PutCachePizzaUseCase
 import com.bosha.domain.usecases.PutPizzaUseCase
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -16,10 +18,11 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-//54.1836563 37.6426194
 class MainViewModel(
     private val getPizzaListUseCase: GetPizzaListUseCase,
     private val putPizzaUseCase: PutPizzaUseCase,
+    private val putCachePizzaUseCase: PutCachePizzaUseCase,
+    private val getCachePizzaUseCase: GetCachePizzaUseCase,
 ) : ViewModel() {
 
     private val handler = CoroutineExceptionHandler { _, throwable ->
@@ -42,6 +45,7 @@ class MainViewModel(
                     is SuccessResult -> {
                         _pizzaResultFlow.value = it.data
                         _sideEffect.value = SideEffectActions.SUCCESS
+                        putCachePizzaUseCase(it.data)
                     }
                 }
             }
