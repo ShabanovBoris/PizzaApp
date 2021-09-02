@@ -17,7 +17,7 @@
         tools:itemCount="6"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         android:paddingTop="48dp"
-        android:paddingBottom="120dp"/>
+        android:paddingBottom="120dp" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
@@ -40,8 +40,7 @@
                 tools:listitem="@layout/banner_item"
                 tools:itemCount="5"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:paddingHorizontal="@dimen/main_item_margin"
-               />
+                android:paddingStart="@dimen/main_item_margin" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"

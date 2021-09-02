@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    tools:viewBindingIgnore="true">
 
     <ImageView
         android:layout_width="24dp"
@@ -14,14 +15,33 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="16dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Москва"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/s_city"
+        style="@style/ExposedDropdownMenu"
+        android:layout_width="140dp"
+        android:layout_height="0dp"
+        app:boxStrokeWidth="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="35dp"
-        android:layout_marginStart="16dp"/>
+        app:endIconMode="dropdown_menu"
+        app:endIconDrawable="@drawable/arrow_drawable"
+        app:endIconTint="@color/black"
+        android:layout_marginTop="10dp"
+        >
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/city_dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
 
     s<androidx.fragment.app.FragmentContainerView

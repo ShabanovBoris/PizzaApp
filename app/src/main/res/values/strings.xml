@@ -8,4 +8,5 @@
     <string name="Menu">Меню</string>
     <string name="profile">Профиль</string>
     <string name="Cart">Корзина</string>
+    <string name="default_city">Москва</string>
 </resources>

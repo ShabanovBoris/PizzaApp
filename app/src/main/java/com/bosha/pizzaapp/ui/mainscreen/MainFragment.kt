@@ -2,7 +2,6 @@ package com.bosha.pizzaapp.ui.mainscreen
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,16 +11,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.bosha.domain.common.SuccessResult
 import com.bosha.domain.entities.PizzaItem
 import com.bosha.pizzaapp.R
 import com.bosha.pizzaapp.databinding.FragmentMainBinding
 import com.bosha.pizzaapp.ui.PizzaViewModelFactory
 import com.bosha.pizzaapp.utils.injectDeps
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import java.util.*
 import javax.inject.Inject
 
 
@@ -48,6 +44,7 @@ class MainFragment : Fragment() {
             setUpBanners(this)
             setUpMainRecycler(this)
         }
+
         return binding.root
     }
 
@@ -111,7 +108,7 @@ class MainFragment : Fragment() {
             MainViewModel.SideEffectActions.ERROR -> {
                 Toast.makeText(requireContext(), "Error loading data", Toast.LENGTH_SHORT).show()
             }
-            MainViewModel.SideEffectActions.SUCCESS -> {
+            MainViewModel.SideEffectActions.LOADED -> {
                 binding.pbLoading.visibility = View.GONE
             }
         }

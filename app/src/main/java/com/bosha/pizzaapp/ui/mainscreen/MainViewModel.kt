@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bosha.domain.common.ErrorResult
 import com.bosha.domain.common.PendingResult
-import com.bosha.domain.common.Result
 import com.bosha.domain.common.SuccessResult
 import com.bosha.domain.entities.PizzaItem
 import com.bosha.domain.usecases.GetCachePizzaUseCase
@@ -44,10 +43,15 @@ class MainViewModel(
                     }
                     is SuccessResult -> {
                         _pizzaResultFlow.value = it.data
-                        _sideEffect.value = SideEffectActions.SUCCESS
+                        _sideEffect.value = SideEffectActions.LOADED
                         putCachePizzaUseCase(it.data)
                     }
                 }
+            }
+        }
+        viewModelScope.launch {
+            getCachePizzaUseCase().collect {
+                _pizzaResultFlow.value = it
             }
         }
     }
@@ -69,6 +73,6 @@ class MainViewModel(
     enum class SideEffectActions{
         LOADING,
         ERROR,
-        SUCCESS
+        LOADED
     }
 }
