@@ -10,7 +10,7 @@ class PizzaApiResponseMapper @Inject constructor() {
         PizzaItem(description, price.toString(), imageResId, title)
 
     fun PizzaItem.mapToPizzaApiResponse() =
-        PizzaApiResponse(price.toInt(), description, imageResId, title, uid = "")
+        PizzaApiResponse(price.toInt(), description, imageResUrl, title, uid = "")
 
     fun List<PizzaApiResponse>.mapToPizzaItemList(): List<PizzaItem> =
         map {

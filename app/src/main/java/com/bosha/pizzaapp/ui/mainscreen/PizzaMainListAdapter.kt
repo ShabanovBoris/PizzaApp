@@ -1,33 +1,32 @@
 package com.bosha.pizzaapp.ui.mainscreen
 
-import android.content.Context
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bosha.domain.entities.PizzaItem
 import com.bosha.pizzaapp.databinding.StoreItemBinding
+import com.bosha.pizzaapp.utils.pizzaImage
 
 class PizzaMainListAdapter() : ListAdapter<PizzaItem, PizzaMainListAdapter.PizzaViewHolder>(
     DiffCallback()
 ) {
     private var onEdit: ((pizza: PizzaItem) -> Unit)? = null
 
-    fun setOnEditListener(action: (pizza: PizzaItem) -> Unit) {
+    fun setOnClickListener(action: (pizza: PizzaItem) -> Unit) {
         onEdit = action
     }
 
     class PizzaViewHolder(
-        private val binding: StoreItemBinding,
-        private val context: Context
+        private val binding: StoreItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: PizzaItem) {
             binding.apply {
                 bPrice.text = "от ${item.price} р"
-                ivPizzaImage.setImageDrawable(ContextCompat.getDrawable(context, item.imageResId))
+                ivPizzaImage.setImageResource(pizzaImage[item.imageResUrl] ?: 1)
                 tvPizzaDescription.text = item.description
                 tvPizzaTitle.text = item.title
             }
@@ -40,7 +39,7 @@ class PizzaMainListAdapter() : ListAdapter<PizzaItem, PizzaMainListAdapter.Pizza
             parent,
             false
         )
-        return PizzaViewHolder(binding, parent.context).apply {
+        return PizzaViewHolder(binding).apply {
             binding.root.setOnClickListener {
                 onEdit?.invoke(getItem(adapterPosition))
             }

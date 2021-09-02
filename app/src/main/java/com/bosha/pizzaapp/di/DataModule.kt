@@ -9,5 +9,5 @@ import dagger.Module
 interface DataModule {
 
     @Binds
-    fun provideWeatherRepository(repositoryImpl: PizzaRepositoryImpl): PizzaRepository
+    fun providePizzaRepository(repositoryImpl: PizzaRepositoryImpl): PizzaRepository
 }

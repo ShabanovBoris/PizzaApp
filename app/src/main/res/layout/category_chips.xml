@@ -13,7 +13,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
         android:layout_height="72dp"
-        app:cardElevation="16dp"
+        app:cardElevation="4dp"
         android:layout_marginBottom="24dp"
         >
 

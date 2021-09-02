@@ -9,14 +9,14 @@
     android:clipToPadding="true">
 
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_pizza_image"
         android:layout_width="135dp"
         android:layout_height="135dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/buffalo" />
+        tools:src="@drawable/pizza2" />
 
     <TextView
         android:id="@+id/tv_pizza_title"

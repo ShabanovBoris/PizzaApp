@@ -11,6 +11,6 @@ class PizzaApiModule {
 
     @ScreenScope
     @Provides
-    fun provideHabitApi(retrofit: Retrofit): PizzaApi =
+    fun providePizzaApi(retrofit: Retrofit): PizzaApi =
         retrofit.create(PizzaApi::class.java)
 }

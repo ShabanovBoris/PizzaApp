@@ -16,7 +16,7 @@
         tools:listitem="@layout/store_item"
         tools:itemCount="6"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        android:paddingTop="@dimen/big_item_margin"
+        android:paddingTop="48dp"
         android:paddingBottom="120dp"/>
 
     <com.google.android.material.appbar.AppBarLayout
@@ -40,8 +40,6 @@
                 tools:listitem="@layout/banner_item"
                 tools:itemCount="5"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="0.5"
                 android:paddingHorizontal="@dimen/main_item_margin"
                />
 
@@ -58,6 +56,13 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/category_chips"
-        android:id="@+id/chips" />
-
+        android:id="@+id/chips_id" />
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

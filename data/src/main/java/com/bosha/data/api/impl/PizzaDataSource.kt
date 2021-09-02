@@ -2,6 +2,7 @@ package com.bosha.data.api.impl
 
 import com.bosha.data.api.PizzaApi
 import com.bosha.data.mappers.PizzaApiResponseMapper
+import com.bosha.domain.common.DISPATCHER_IO
 import com.bosha.domain.entities.PizzaItem
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -11,11 +12,13 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
+import javax.inject.Named
 
 class PizzaDataSource @Inject constructor(
     private val api: PizzaApi,
     private val mapper: PizzaApiResponseMapper,
-    private val dispatcher: CoroutineDispatcher = Dispatchers.Main.immediate
+    @Named(DISPATCHER_IO)
+    private val dispatcher: CoroutineDispatcher
 ) {
     fun getPizzaList(): Flow<List<PizzaItem>> =
         flow { emit(api.getPizzaList()) }

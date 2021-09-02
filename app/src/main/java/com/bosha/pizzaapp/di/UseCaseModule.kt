@@ -19,10 +19,4 @@ class UseCaseModule {
     fun providePutPizzaUseCase(repository: PizzaRepository):  PutPizzaUseCase =
         PutPizzaUseCase(repository)
 
-
-
-    //todo stub
-    @Provides
-    fun provideDispatcher(): CoroutineDispatcher = Dispatchers.Main
-
 }
